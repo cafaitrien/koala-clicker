@@ -7,13 +7,21 @@ clickable.addEventListener("click", clickCounter)
 let counter = 0;
 console.log("counter: ", counter);
 // click handler function
-function clickCounter(){
+
+function clickCounter(event){
   // track total clicks - increment the counter variable
   counter++;
   // output click count to container in DOM
-  console.log("counter", counter)
+  console.log("counter", counter);
 
   // get the container, update its contents
-  let container = document.querySelector("p#clickcount")
-  container.innerHTML = counter;
+  let container = document.querySelector("p#clickcount");
+
+  if (counter === 10) {
+    container.innerHTML = "Koala has been klicked " + counter + " times.";
+  } else if (counter === 20) {
+    container.innerHTML = "Koala has been klicked " + counter + " times.";
+  } else {
+    container.innerHTML = counter;
+  }
 }
